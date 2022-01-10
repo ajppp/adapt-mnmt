@@ -23,7 +23,7 @@ if [ ! -d $RUNDIR/model ]; then
   python $ONMT/bin/main.py train_and_eval \
 			--config $CONFIG \
 			--model $MODEL_DEFN \
-			--run_dir $RUNDIR 
+			--run_dir $RUNDIR \
 			--data_dir $DATADIR \
 			--seed 1234 \
 			--num_gpus 2 > $LOG 2> $LOG
