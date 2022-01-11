@@ -14,8 +14,8 @@ TGT='tgt'
 
 ONMT=$EXPDIR/OpenNMT/opennmt
 GEN_VOCAB=$ONMT/bin/build_vocab.py
-SPTED=$EXPDIR/scripts/sentencepiece.py
-SHARED_VOCAB=false	# true
+SPTED=$EXPDIR/scripts/sentencepiece_trainer.py
+SHARED_VOCAB=true	# false
 
 SPMDIR=$DATADIR/spmodel
 SPDATA=$DATADIR/spdata
