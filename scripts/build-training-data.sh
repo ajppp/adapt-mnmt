@@ -50,11 +50,11 @@ if [ ! -d $DSTDIR -a -d $DATADIR ]; then
 
     echo "BUILDING: $SRC>$TGT"
  
-    if [ $SRC = 'en' ]; then
-      DATA=$DATADIR/${TGT}_${SRC}
-    else	
+    #if [ $SRC = 'en' ]; then
+      #DATA=$DATADIR/${TGT}_${SRC}
+    #else	
       DATA=$DATADIR/${SRC}_${TGT}
-    fi
+    #fi
 
 
     COUNT=$((COUNT+1))
@@ -65,7 +65,7 @@ if [ ! -d $DSTDIR -a -d $DATADIR ]; then
 	if [ -n $FLAG ]; then 
           $NORM < ${RAWDATA}.$SRC | $DEES | $DETOK -l $SRC -q | awk -vtgt_tag="<2${TGT}>" '{ print tgt_tag" "$0 }' >> ${SET}.src	#$SRC 
 
-          $NORM < ${RAWDATA}.$SRC | $DEES | $DETOK -l $SRC -q  >> ${SET}.tgt	
+          $NORM < ${RAWDATA}.$TGT | $DEES | $DETOK -l $SRC -q  >> ${SET}.tgt	
 
 	else
           $NORM < ${RAWDATA}.$SRC | $DEES | $DETOK -l $SRC -q  >> ${SET}.src
